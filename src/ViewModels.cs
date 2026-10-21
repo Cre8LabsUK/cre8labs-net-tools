@@ -138,32 +138,44 @@ namespace Cre8Labs.NetTools
         }
     }
 
-    /// <summary>One row in the Devices panel: a DHCP client, or a reservation not seen yet.</summary>
-    public sealed class DeviceItem
+    /// <summary>
+    /// One row in the Devices list: a DHCP client, or a reservation not seen yet. Rows are updated in place
+    /// (see <see cref="CopyFrom"/>), so a refresh never swallows a click that lands at the same moment.
+    /// </summary>
+    public sealed class DeviceItem : Observable
     {
+        string _ip = "", _name = "", _detail = "", _kind = "", _stateText = "", _timeLeft = "", _reservedIp = "", _movingNote = "";
+        bool _isReserved;
+
         public string Mac { get; set; }
-        public string Ip { get; set; } = "";
-        public string Name { get; set; }
-        public string Detail { get; set; } = "";
+        public string Ip { get => _ip; set => Set(ref _ip, value ?? ""); }
+        public string Name { get => _name; set => Set(ref _name, value ?? ""); }
+        public string Detail { get => _detail; set => Set(ref _detail, value ?? ""); }
 
         /// <summary>"active", "offered", "idle" (released or expired) or "waiting" (reserved, not seen yet).</summary>
-        public string Kind { get; set; }
-        public string StateText { get; set; }
-        public string TimeLeft { get; set; } = "";
-        public bool IsReserved { get; set; }
-        public string ReservedIp { get; set; } = "";
+        public string Kind { get => _kind; set => Set(ref _kind, value ?? ""); }
+        public string StateText { get => _stateText; set => Set(ref _stateText, value ?? ""); }
+        public string TimeLeft { get => _timeLeft; set => Set(ref _timeLeft, value ?? ""); }
+        public bool IsReserved { get => _isReserved; set => Set(ref _isReserved, value); }
+        public string ReservedIp { get => _reservedIp; set => Set(ref _reservedIp, value ?? ""); }
 
         /// <summary>Shown when a device still holds an old address and will move to its reservation.</summary>
-        public string MovingNote { get; set; } = "";
+        public string MovingNote { get => _movingNote; set => Set(ref _movingNote, value ?? ""); }
+
         public bool HasMovingNote => MovingNote.Length > 0;
         public bool HasDetail => Detail.Length > 0;
-
-        /// <summary>MAC, then host name and vendor, on one muted line under the device name.</summary>
-        public string SubLine => Detail.Length > 0 ? Mac + "  \u00B7  " + Detail : Mac;
         public bool CanOpen => Kind == "active" && Ip.Length > 0;
         public string AssignLabel => IsReserved ? "Change reserved IP" : "Reserve an IP for this device";
-    }
+        public string SubLine => Detail.Length > 0 ? Mac + "  \u00B7  " + Detail : Mac;
 
+        public void CopyFrom(DeviceItem other)
+        {
+            Ip = other.Ip; Name = other.Name; Detail = other.Detail; Kind = other.Kind; StateText = other.StateText;
+            TimeLeft = other.TimeLeft; IsReserved = other.IsReserved; ReservedIp = other.ReservedIp; MovingNote = other.MovingNote;
+            foreach (var derived in new[] { nameof(HasMovingNote), nameof(HasDetail), nameof(CanOpen), nameof(AssignLabel), nameof(SubLine) })
+                Raise(derived);
+        }
+    }
     /// <summary>One row on the Scan page.</summary>
     public sealed class ScanItem
     {

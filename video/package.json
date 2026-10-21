@@ -1,0 +1,23 @@
+{
+  "name": "nettools-explainers",
+  "private": true,
+  "description": "Explainer videos for Cre8Labs Net Tools, built with Remotion from UI Automation captures of the app's demo mode.",
+  "scripts": {
+    "capture": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/capture.ps1",
+    "studio": "remotion studio",
+    "render": "node scripts/render-all.mjs"
+  },
+  "dependencies": {
+    "@remotion/cli": "4.0.534",
+    "@remotion/google-fonts": "4.0.534",
+    "@remotion/renderer": "4.0.534",
+    "@remotion/bundler": "4.0.534",
+    "remotion": "4.0.534",
+    "react": "18.3.1",
+    "react-dom": "18.3.1"
+  },
+  "devDependencies": {
+    "@types/react": "18.3.12",
+    "typescript": "5.6.3"
+  }
+}

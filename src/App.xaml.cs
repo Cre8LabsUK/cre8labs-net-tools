@@ -7,6 +7,9 @@ namespace Cre8Labs.NetTools
 {
     public partial class App : Application
     {
+        /// <summary>Set by "--demo --capture &lt;folder&gt;" when recording frames for explainer videos.</summary>
+        public static string CaptureFolder { get; private set; }
+
         public static string CrashLogPath => Path.Combine(Path.GetTempPath(), "Cre8Labs-NetTools-crash.log");
 
         protected override void OnStartup(StartupEventArgs e)
@@ -14,6 +17,9 @@ namespace Cre8Labs.NetTools
             DispatcherUnhandledException += OnDispatcherUnhandledException;
             AppDomain.CurrentDomain.UnhandledException += (s, args) => WriteCrash(args.ExceptionObject as Exception);
             Core.NetworkService.DemoMode = Array.IndexOf(e.Args, "--demo") >= 0;
+            // Explainer video capture, only together with demo mode so it can never record a real network.
+            var capture = Array.IndexOf(e.Args, "--capture");
+            if (Core.NetworkService.DemoMode && capture >= 0 && capture + 1 < e.Args.Length) CaptureFolder = e.Args[capture + 1];
             base.OnStartup(e);
         }
 

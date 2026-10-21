@@ -418,8 +418,19 @@ namespace Cre8Labs.NetTools
                 });
             }
 
-            Devices.Clear();
-            foreach (var item in items.OrderBy(i => IpTools.IsIPv4(i.Ip) ? IpTools.ToUInt(i.Ip) : uint.MaxValue)) Devices.Add(item);
+            var ordered = items.OrderBy(i => IpTools.IsIPv4(i.Ip) ? IpTools.ToUInt(i.Ip) : uint.MaxValue).ToList();
+            // Change the list as little as possible: rows that stay keep their buttons, so a click is never lost to a refresh.
+            for (var i = Devices.Count - 1; i >= 0; i--)
+                if (!ordered.Any(o => string.Equals(o.Mac, Devices[i].Mac, StringComparison.OrdinalIgnoreCase))) Devices.RemoveAt(i);
+            for (var i = 0; i < ordered.Count; i++)
+            {
+                var existing = -1;
+                for (var j = 0; j < Devices.Count; j++)
+                    if (string.Equals(Devices[j].Mac, ordered[i].Mac, StringComparison.OrdinalIgnoreCase)) { existing = j; break; }
+                if (existing < 0) { Devices.Insert(i, ordered[i]); continue; }
+                if (existing != i) Devices.Move(existing, i);
+                Devices[i].CopyFrom(ordered[i]);
+            }
 
             _activeDevices = items.Count(i => i.Kind == "active");
             var reservedCount = reservations.Count;

@@ -132,6 +132,11 @@ namespace Cre8Labs.NetTools
             {
                 UseRoundedCorners();
                 var source = (HwndSource)PresentationSource.FromVisual(this);
+                if (App.CaptureFolder != null)
+                {
+                    MinWidth = MinHeight = 0;
+                    source.AddHook(CaptureRecorder.AllowLargeWindow);
+                }
                 _globalHotkeys = new GlobalHotkeys(source.Handle);
                 _globalHotkeys.Pressed += OnGlobalHotkey;
                 source.AddHook(_globalHotkeys.WndProc);
@@ -144,6 +149,14 @@ namespace Cre8Labs.NetTools
 
         async void OnLoaded(object sender, RoutedEventArgs e)
         {
+            if (App.CaptureFolder != null)
+            {
+                Width = CaptureRecorder.Width;
+                Height = CaptureRecorder.Height;
+                Left = 0;
+                Top = 0;
+                new CaptureRecorder(this, App.CaptureFolder);
+            }
             BrandText.Text = $"v{Assembly.GetEntryAssembly().GetName().Version.ToString(3)}   cre8labs.uk";
             RebuildPresets();
             LoadPoolForm();

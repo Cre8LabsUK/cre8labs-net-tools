@@ -1,0 +1,80 @@
+{
+ "chapters": [
+  {
+   "id": "test",
+   "title": "Pipeline test",
+   "subtitle": "Old screenshots",
+   "steps": [
+    {
+     "caption": "Open the DHCP pool page",
+     "kind": "click",
+     "target": {
+      "x": 140,
+      "y": 160,
+      "w": 120,
+      "h": 40
+     },
+     "zoom": "target",
+     "frames": [
+      {
+       "file": "shots/t-nav-adapter.png",
+       "ms": 0
+      },
+      {
+       "file": "shots/t-nav-pool.png",
+       "ms": 600
+      }
+     ],
+     "actionMs": 500,
+     "durationMs": 2500
+    },
+    {
+     "caption": "Scan the network",
+     "kind": "click",
+     "target": {
+      "x": 900,
+      "y": 120,
+      "w": 140,
+      "h": 44
+     },
+     "zoom": "target",
+     "frames": [
+      {
+       "file": "shots/t-nav-pool.png",
+       "ms": 0
+      },
+      {
+       "file": "shots/t-nav-scan-done.png",
+       "ms": 600
+      }
+     ],
+     "actionMs": 500,
+     "durationMs": 2500
+    },
+    {
+     "caption": "Monitor shows the outage",
+     "kind": "click",
+     "target": {
+      "x": 600,
+      "y": 400,
+      "w": 300,
+      "h": 60
+     },
+     "zoom": "none",
+     "frames": [
+      {
+       "file": "shots/t-mon-down.png",
+       "ms": 0
+      },
+      {
+       "file": "shots/t-mon-back.png",
+       "ms": 600
+      }
+     ],
+     "actionMs": 500,
+     "durationMs": 2500
+    }
+   ]
+  }
+ ]
+}

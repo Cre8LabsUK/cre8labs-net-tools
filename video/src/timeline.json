@@ -1,80 +1,1919 @@
 {
- "chapters": [
-  {
-   "id": "test",
-   "title": "Pipeline test",
-   "subtitle": "Old screenshots",
-   "steps": [
-    {
-     "caption": "Open the DHCP pool page",
-     "kind": "click",
-     "target": {
-      "x": 140,
-      "y": 160,
-      "w": 120,
-      "h": 40
-     },
-     "zoom": "target",
-     "frames": [
-      {
-       "file": "shots/t-nav-adapter.png",
-       "ms": 0
-      },
-      {
-       "file": "shots/t-nav-pool.png",
-       "ms": 600
-      }
-     ],
-     "actionMs": 500,
-     "durationMs": 2500
-    },
-    {
-     "caption": "Scan the network",
-     "kind": "click",
-     "target": {
-      "x": 900,
-      "y": 120,
-      "w": 140,
-      "h": 44
-     },
-     "zoom": "target",
-     "frames": [
-      {
-       "file": "shots/t-nav-pool.png",
-       "ms": 0
-      },
-      {
-       "file": "shots/t-nav-scan-done.png",
-       "ms": 600
-      }
-     ],
-     "actionMs": 500,
-     "durationMs": 2500
-    },
-    {
-     "caption": "Monitor shows the outage",
-     "kind": "click",
-     "target": {
-      "x": 600,
-      "y": 400,
-      "w": 300,
-      "h": 60
-     },
-     "zoom": "none",
-     "frames": [
-      {
-       "file": "shots/t-mon-down.png",
-       "ms": 0
-      },
-      {
-       "file": "shots/t-mon-back.png",
-       "ms": 600
-      }
-     ],
-     "actionMs": 500,
-     "durationMs": 2500
-    }
-   ]
-  }
- ]
+    "chapters":  [
+                     {
+                         "title":  "Switch IP in one click",
+                         "steps":  [
+                                       {
+                                           "actionMs":  0,
+                                           "durationMs":  2204,
+                                           "frames":  [
+                                                          {
+                                                              "ms":  0,
+                                                              "file":  "shots/f639282167275297882.png"
+                                                          }
+                                                      ],
+                                           "kind":  "none",
+                                           "target":  null,
+                                           "zoom":  {
+                                                        "y":  70,
+                                                        "w":  380,
+                                                        "h":  810,
+                                                        "x":  100
+                                                    },
+                                           "caption":  "Net Tools shows the selected adapter, its live address, link speed and DNS"
+                                       },
+                                       {
+                                           "actionMs":  0,
+                                           "durationMs":  2340,
+                                           "frames":  [
+                                                          {
+                                                              "ms":  0,
+                                                              "file":  "shots/f639282167275297882.png"
+                                                          },
+                                                          {
+                                                              "ms":  447,
+                                                              "file":  "shots/f639282167323704185.png"
+                                                          },
+                                                          {
+                                                              "ms":  807,
+                                                              "file":  "shots/f639282167327309080.png"
+                                                          },
+                                                          {
+                                                              "ms":  1183,
+                                                              "file":  "shots/f639282167331071700.png"
+                                                          },
+                                                          {
+                                                              "ms":  1558,
+                                                              "file":  "shots/f639282167334816838.png"
+                                                          }
+                                                      ],
+                                           "kind":  "click",
+                                           "target":  {
+                                                          "y":  230,
+                                                          "w":  261,
+                                                          "h":  122,
+                                                          "x":  477
+                                                      },
+                                           "zoom":  {
+                                                        "y":  70,
+                                                        "w":  1110,
+                                                        "h":  810,
+                                                        "x":  470
+                                                    },
+                                           "caption":  "Click a preset to switch. The adapter changes in about a second"
+                                       },
+                                       {
+                                           "actionMs":  0,
+                                           "durationMs":  2298,
+                                           "frames":  [
+                                                          {
+                                                              "ms":  0,
+                                                              "file":  "shots/f639282167334816838.png"
+                                                          },
+                                                          {
+                                                              "ms":  435,
+                                                              "file":  "shots/f639282167348709242.png"
+                                                          },
+                                                          {
+                                                              "ms":  811,
+                                                              "file":  "shots/f639282167352471370.png"
+                                                          },
+                                                          {
+                                                              "ms":  1193,
+                                                              "file":  "shots/f639282167356291336.png"
+                                                          }
+                                                      ],
+                                           "kind":  "click",
+                                           "target":  {
+                                                          "y":  138,
+                                                          "w":  1087,
+                                                          "h":  78,
+                                                          "x":  477
+                                                      },
+                                           "zoom":  {
+                                                        "y":  70,
+                                                        "w":  1110,
+                                                        "h":  810,
+                                                        "x":  470
+                                                    },
+                                           "caption":  "Back to automatic addressing (DHCP) with one click, or press 0"
+                                       },
+                                       {
+                                           "actionMs":  0,
+                                           "durationMs":  2141,
+                                           "frames":  [
+                                                          {
+                                                              "ms":  0,
+                                                              "file":  "shots/f639282167356291336.png"
+                                                          },
+                                                          {
+                                                              "ms":  480,
+                                                              "file":  "shots/f639282167373916094.png"
+                                                          },
+                                                          {
+                                                              "ms":  870,
+                                                              "file":  "shots/f639282167377813539.png"
+                                                          },
+                                                          {
+                                                              "ms":  1240,
+                                                              "file":  "shots/f639282167381513719.png"
+                                                          }
+                                                      ],
+                                           "kind":  "click",
+                                           "target":  {
+                                                          "y":  230,
+                                                          "w":  261,
+                                                          "h":  122,
+                                                          "x":  752
+                                                      },
+                                           "zoom":  {
+                                                        "y":  70,
+                                                        "w":  1110,
+                                                        "h":  810,
+                                                        "x":  470
+                                                    },
+                                           "caption":  "Each preset has its own key: press 2 or click to switch to Site A cameras"
+                                       },
+                                       {
+                                           "actionMs":  0,
+                                           "durationMs":  1154,
+                                           "frames":  [
+                                                          {
+                                                              "ms":  0,
+                                                              "file":  "shots/f639282167381513719.png"
+                                                          },
+                                                          {
+                                                              "ms":  522,
+                                                              "file":  "shots/f639282167398873080.png"
+                                                          }
+                                                      ],
+                                           "kind":  "click",
+                                           "target":  {
+                                                          "y":  81,
+                                                          "w":  120,
+                                                          "h":  40,
+                                                          "x":  1458
+                                                      },
+                                           "zoom":  "none",
+                                           "caption":  "Save the networks you work on as presets"
+                                       },
+                                       {
+                                           "actionMs":  0,
+                                           "durationMs":  4495,
+                                           "caption":  "Give it a name",
+                                           "kind":  "type",
+                                           "target":  {
+                                                          "y":  236,
+                                                          "w":  452,
+                                                          "h":  40,
+                                                          "x":  64
+                                                      },
+                                           "frames":  [
+                                                          {
+                                                              "ms":  0,
+                                                              "file":  "shots/f639282167406570216.png"
+                                                          },
+                                                          {
+                                                              "ms":  98,
+                                                              "file":  "shots/f639282167410792554.png"
+                                                          },
+                                                          {
+                                                              "ms":  502,
+                                                              "file":  "shots/f639282167414836450.png"
+                                                          },
+                                                          {
+                                                              "ms":  890,
+                                                              "file":  "shots/f639282167418713623.png"
+                                                          },
+                                                          {
+                                                              "ms":  1281,
+                                                              "file":  "shots/f639282167422622578.png"
+                                                          },
+                                                          {
+                                                              "ms":  1669,
+                                                              "file":  "shots/f639282167426506996.png"
+                                                          },
+                                                          {
+                                                              "ms":  2063,
+                                                              "file":  "shots/f639282167430440654.png"
+                                                          },
+                                                          {
+                                                              "ms":  2454,
+                                                              "file":  "shots/f639282167434352166.png"
+                                                          },
+                                                          {
+                                                              "ms":  2842,
+                                                              "file":  "shots/f639282167438234322.png"
+                                                          },
+                                                          {
+                                                              "ms":  3234,
+                                                              "file":  "shots/f639282167442157295.png"
+                                                          },
+                                                          {
+                                                              "ms":  3621,
+                                                              "file":  "shots/f639282167446023258.png"
+                                                          },
+                                                          {
+                                                              "ms":  4010,
+                                                              "file":  "shots/f639282167449917968.png"
+                                                          },
+                                                          {
+                                                              "ms":  4405,
+                                                              "file":  "shots/f639282167453866762.png"
+                                                          }
+                                                      ],
+                                           "zoom":  "target",
+                                           "text":  "Site B NVR"
+                                       },
+                                       {
+                                           "actionMs":  0,
+                                           "durationMs":  5609,
+                                           "caption":  "Enter the IP address",
+                                           "kind":  "type",
+                                           "target":  {
+                                                          "y":  315,
+                                                          "w":  219,
+                                                          "h":  40,
+                                                          "x":  64
+                                                      },
+                                           "frames":  [
+                                                          {
+                                                              "ms":  0,
+                                                              "file":  "shots/f639282167453866762.png"
+                                                          },
+                                                          {
+                                                              "ms":  32,
+                                                              "file":  "shots/f639282167457758557.png"
+                                                          },
+                                                          {
+                                                              "ms":  422,
+                                                              "file":  "shots/f639282167461653033.png"
+                                                          },
+                                                          {
+                                                              "ms":  812,
+                                                              "file":  "shots/f639282167465558044.png"
+                                                          },
+                                                          {
+                                                              "ms":  1208,
+                                                              "file":  "shots/f639282167469514095.png"
+                                                          },
+                                                          {
+                                                              "ms":  1594,
+                                                              "file":  "shots/f639282167473377150.png"
+                                                          },
+                                                          {
+                                                              "ms":  1986,
+                                                              "file":  "shots/f639282167477300363.png"
+                                                          },
+                                                          {
+                                                              "ms":  2374,
+                                                              "file":  "shots/f639282167481178327.png"
+                                                          },
+                                                          {
+                                                              "ms":  2765,
+                                                              "file":  "shots/f639282167485084298.png"
+                                                          },
+                                                          {
+                                                              "ms":  3157,
+                                                              "file":  "shots/f639282167489002356.png"
+                                                          },
+                                                          {
+                                                              "ms":  3560,
+                                                              "file":  "shots/f639282167493034999.png"
+                                                          },
+                                                          {
+                                                              "ms":  3955,
+                                                              "file":  "shots/f639282167496989114.png"
+                                                          },
+                                                          {
+                                                              "ms":  4346,
+                                                              "file":  "shots/f639282167500896473.png"
+                                                          },
+                                                          {
+                                                              "ms":  4737,
+                                                              "file":  "shots/f639282167504810391.png"
+                                                          },
+                                                          {
+                                                              "ms":  5128,
+                                                              "file":  "shots/f639282167508710729.png"
+                                                          },
+                                                          {
+                                                              "ms":  5520,
+                                                              "file":  "shots/f639282167512634280.png"
+                                                          }
+                                                      ],
+                                           "zoom":  "target",
+                                           "text":  "192.168.50.20"
+                                       },
+                                       {
+                                           "actionMs":  0,
+                                           "durationMs":  1751,
+                                           "caption":  "Type the mask as 255.255.255.0 or simply /24",
+                                           "kind":  "type",
+                                           "target":  {
+                                                          "y":  315,
+                                                          "w":  219,
+                                                          "h":  40,
+                                                          "x":  297
+                                                      },
+                                           "frames":  [
+                                                          {
+                                                              "ms":  0,
+                                                              "file":  "shots/f639282167512634280.png"
+                                                          },
+                                                          {
+                                                              "ms":  35,
+                                                              "file":  "shots/f639282167516513302.png"
+                                                          },
+                                                          {
+                                                              "ms":  427,
+                                                              "file":  "shots/f639282167520434146.png"
+                                                          },
+                                                          {
+                                                              "ms":  877,
+                                                              "file":  "shots/f639282167524936536.png"
+                                                          },
+                                                          {
+                                                              "ms":  1269,
+                                                              "file":  "shots/f639282167528852632.png"
+                                                          },
+                                                          {
+                                                              "ms":  1661,
+                                                              "file":  "shots/f639282167532775210.png"
+                                                          }
+                                                      ],
+                                           "zoom":  "target",
+                                           "text":  "/24"
+                                       },
+                                       {
+                                           "actionMs":  0,
+                                           "durationMs":  5190,
+                                           "caption":  "Gateway and DNS are optional, and the subnet is checked as you type",
+                                           "kind":  "type",
+                                           "target":  {
+                                                          "y":  394,
+                                                          "w":  452,
+                                                          "h":  40,
+                                                          "x":  64
+                                                      },
+                                           "frames":  [
+                                                          {
+                                                              "ms":  0,
+                                                              "file":  "shots/f639282167532775210.png"
+                                                          },
+                                                          {
+                                                              "ms":  41,
+                                                              "file":  "shots/f639282167536722732.png"
+                                                          },
+                                                          {
+                                                              "ms":  431,
+                                                              "file":  "shots/f639282167540619756.png"
+                                                          },
+                                                          {
+                                                              "ms":  817,
+                                                              "file":  "shots/f639282167544477480.png"
+                                                          },
+                                                          {
+                                                              "ms":  1206,
+                                                              "file":  "shots/f639282167548371876.png"
+                                                          },
+                                                          {
+                                                              "ms":  1597,
+                                                              "file":  "shots/f639282167552282550.png"
+                                                          },
+                                                          {
+                                                              "ms":  1987,
+                                                              "file":  "shots/f639282167556178914.png"
+                                                          },
+                                                          {
+                                                              "ms":  2378,
+                                                              "file":  "shots/f639282167560095155.png"
+                                                          },
+                                                          {
+                                                              "ms":  2768,
+                                                              "file":  "shots/f639282167563987318.png"
+                                                          },
+                                                          {
+                                                              "ms":  3164,
+                                                              "file":  "shots/f639282167567946359.png"
+                                                          },
+                                                          {
+                                                              "ms":  3552,
+                                                              "file":  "shots/f639282167571829199.png"
+                                                          },
+                                                          {
+                                                              "ms":  3943,
+                                                              "file":  "shots/f639282167575745449.png"
+                                                          },
+                                                          {
+                                                              "ms":  4332,
+                                                              "file":  "shots/f639282167579626806.png"
+                                                          },
+                                                          {
+                                                              "ms":  4725,
+                                                              "file":  "shots/f639282167583557146.png"
+                                                          },
+                                                          {
+                                                              "ms":  5114,
+                                                              "file":  "shots/f639282167587449597.png"
+                                                          }
+                                                      ],
+                                           "zoom":  "target",
+                                           "text":  "192.168.50.1"
+                                       },
+                                       {
+                                           "actionMs":  0,
+                                           "durationMs":  1816,
+                                           "frames":  [
+                                                          {
+                                                              "ms":  0,
+                                                              "file":  "shots/f639282167587449597.png"
+                                                          },
+                                                          {
+                                                              "ms":  156,
+                                                              "file":  "shots/f639282167591415808.png"
+                                                          },
+                                                          {
+                                                              "ms":  542,
+                                                              "file":  "shots/f639282167595275613.png"
+                                                          },
+                                                          {
+                                                              "ms":  928,
+                                                              "file":  "shots/f639282167599129482.png"
+                                                          }
+                                                      ],
+                                           "kind":  "click",
+                                           "target":  {
+                                                          "y":  680,
+                                                          "w":  100,
+                                                          "h":  40,
+                                                          "x":  416
+                                                      },
+                                           "zoom":  {
+                                                        "y":  70,
+                                                        "w":  1110,
+                                                        "h":  810,
+                                                        "x":  470
+                                                    },
+                                           "caption":  "Save, and the new preset is ready on its own tile with its own key"
+                                       },
+                                       {
+                                           "actionMs":  0,
+                                           "durationMs":  2384,
+                                           "frames":  [
+                                                          {
+                                                              "ms":  0,
+                                                              "file":  "shots/f639282167599129482.png"
+                                                          },
+                                                          {
+                                                              "ms":  559,
+                                                              "file":  "shots/f639282167617048338.png"
+                                                          },
+                                                          {
+                                                              "ms":  981,
+                                                              "file":  "shots/f639282167621269743.png"
+                                                          },
+                                                          {
+                                                              "ms":  1407,
+                                                              "file":  "shots/f639282167625536459.png"
+                                                          },
+                                                          {
+                                                              "ms":  1819,
+                                                              "file":  "shots/f639282167629650938.png"
+                                                          }
+                                                      ],
+                                           "kind":  "click",
+                                           "target":  {
+                                                          "y":  0,
+                                                          "w":  46,
+                                                          "h":  56,
+                                                          "x":  1403
+                                                      },
+                                           "zoom":  "none",
+                                           "caption":  "Shortcuts can be reassigned, turned off, or made to work from any app"
+                                       },
+                                       {
+                                           "actionMs":  0,
+                                           "durationMs":  866,
+                                           "frames":  [
+                                                          {
+                                                              "ms":  0,
+                                                              "file":  "shots/f639282167629650938.png"
+                                                          },
+                                                          {
+                                                              "ms":  485,
+                                                              "file":  "shots/f639282167644112404.png"
+                                                          }
+                                                      ],
+                                           "kind":  "click",
+                                           "target":  {
+                                                          "y":  708,
+                                                          "w":  96,
+                                                          "h":  40,
+                                                          "x":  303
+                                                      },
+                                           "zoom":  "none",
+                                           "caption":  "Close the shortcuts window"
+                                       }
+                                   ],
+                         "id":  "presets",
+                         "subtitle":  "Presets, DHCP and keyboard shortcuts"
+                     },
+                     {
+                         "title":  "DHCP pool for cameras",
+                         "steps":  [
+                                       {
+                                           "actionMs":  0,
+                                           "durationMs":  1065,
+                                           "frames":  [
+                                                          {
+                                                              "ms":  0,
+                                                              "file":  "shots/f639282167644112404.png"
+                                                          },
+                                                          {
+                                                              "ms":  528,
+                                                              "file":  "shots/f639282167654859378.png"
+                                                          }
+                                                      ],
+                                           "kind":  "click",
+                                           "target":  {
+                                                          "y":  138,
+                                                          "w":  72,
+                                                          "h":  57,
+                                                          "x":  10
+                                                      },
+                                           "zoom":  "none",
+                                           "caption":  "Open the DHCP pool page"
+                                       },
+                                       {
+                                           "actionMs":  0,
+                                           "durationMs":  6327,
+                                           "caption":  "Choose the network to serve. The server address and range fill in for you",
+                                           "kind":  "type",
+                                           "target":  {
+                                                          "y":  458,
+                                                          "w":  288,
+                                                          "h":  40,
+                                                          "x":  136
+                                                      },
+                                           "frames":  [
+                                                          {
+                                                              "ms":  0,
+                                                              "file":  "shots/f639282167654859378.png"
+                                                          },
+                                                          {
+                                                              "ms":  106,
+                                                              "file":  "shots/f639282167666466583.png"
+                                                          },
+                                                          {
+                                                              "ms":  521,
+                                                              "file":  "shots/f639282167670620809.png"
+                                                          },
+                                                          {
+                                                              "ms":  930,
+                                                              "file":  "shots/f639282167674707391.png"
+                                                          },
+                                                          {
+                                                              "ms":  1336,
+                                                              "file":  "shots/f639282167678773756.png"
+                                                          },
+                                                          {
+                                                              "ms":  1741,
+                                                              "file":  "shots/f639282167682822708.png"
+                                                          },
+                                                          {
+                                                              "ms":  2149,
+                                                              "file":  "shots/f639282167686902001.png"
+                                                          },
+                                                          {
+                                                              "ms":  2570,
+                                                              "file":  "shots/f639282167691114607.png"
+                                                          },
+                                                          {
+                                                              "ms":  2975,
+                                                              "file":  "shots/f639282167695165269.png"
+                                                          },
+                                                          {
+                                                              "ms":  3381,
+                                                              "file":  "shots/f639282167699222321.png"
+                                                          },
+                                                          {
+                                                              "ms":  3790,
+                                                              "file":  "shots/f639282167703315202.png"
+                                                          },
+                                                          {
+                                                              "ms":  4209,
+                                                              "file":  "shots/f639282167707501739.png"
+                                                          },
+                                                          {
+                                                              "ms":  4618,
+                                                              "file":  "shots/f639282167711593247.png"
+                                                          },
+                                                          {
+                                                              "ms":  5039,
+                                                              "file":  "shots/f639282167715804497.png"
+                                                          },
+                                                          {
+                                                              "ms":  5444,
+                                                              "file":  "shots/f639282167719851776.png"
+                                                          },
+                                                          {
+                                                              "ms":  5854,
+                                                              "file":  "shots/f639282167723952916.png"
+                                                          }
+                                                      ],
+                                           "zoom":  {
+                                                        "y":  70,
+                                                        "w":  380,
+                                                        "h":  810,
+                                                        "x":  100
+                                                    },
+                                           "text":  "192.168.1.0/24"
+                                       },
+                                       {
+                                           "actionMs":  0,
+                                           "durationMs":  8199,
+                                           "frames":  [
+                                                          {
+                                                              "ms":  0,
+                                                              "file":  "shots/f639282167723952916.png"
+                                                          },
+                                                          {
+                                                              "ms":  154,
+                                                              "file":  "shots/f639282167731911366.png"
+                                                          },
+                                                          {
+                                                              "ms":  577,
+                                                              "file":  "shots/f639282167736150393.png"
+                                                          },
+                                                          {
+                                                              "ms":  1367,
+                                                              "file":  "shots/f639282167744046114.png"
+                                                          },
+                                                          {
+                                                              "ms":  1798,
+                                                              "file":  "shots/f639282167748350917.png"
+                                                          },
+                                                          {
+                                                              "ms":  2237,
+                                                              "file":  "shots/f639282167752746316.png"
+                                                          },
+                                                          {
+                                                              "ms":  2676,
+                                                              "file":  "shots/f639282167757133673.png"
+                                                          },
+                                                          {
+                                                              "ms":  3111,
+                                                              "file":  "shots/f639282167761486106.png"
+                                                          },
+                                                          {
+                                                              "ms":  3548,
+                                                              "file":  "shots/f639282167765855023.png"
+                                                          },
+                                                          {
+                                                              "ms":  3987,
+                                                              "file":  "shots/f639282167770248526.png"
+                                                          },
+                                                          {
+                                                              "ms":  4409,
+                                                              "file":  "shots/f639282167774466588.png"
+                                                          },
+                                                          {
+                                                              "ms":  4828,
+                                                              "file":  "shots/f639282167778656327.png"
+                                                          },
+                                                          {
+                                                              "ms":  5258,
+                                                              "file":  "shots/f639282167782954168.png"
+                                                          },
+                                                          {
+                                                              "ms":  5676,
+                                                              "file":  "shots/f639282167787137010.png"
+                                                          },
+                                                          {
+                                                              "ms":  6099,
+                                                              "file":  "shots/f639282167791367623.png"
+                                                          },
+                                                          {
+                                                              "ms":  6518,
+                                                              "file":  "shots/f639282167795552550.png"
+                                                          },
+                                                          {
+                                                              "ms":  6940,
+                                                              "file":  "shots/f639282167799772782.png"
+                                                          },
+                                                          {
+                                                              "ms":  7366,
+                                                              "file":  "shots/f639282167804038016.png"
+                                                          },
+                                                          {
+                                                              "ms":  7784,
+                                                              "file":  "shots/f639282167808219021.png"
+                                                          }
+                                                      ],
+                                           "kind":  "click",
+                                           "target":  {
+                                                          "y":  652,
+                                                          "w":  288,
+                                                          "h":  40,
+                                                          "x":  136
+                                                      },
+                                           "zoom":  {
+                                                        "y":  70,
+                                                        "w":  1110,
+                                                        "h":  810,
+                                                        "x":  470
+                                                    },
+                                           "caption":  "Start the pool, plug in the cameras, and watch them get addresses"
+                                       },
+                                       {
+                                           "actionMs":  0,
+                                           "durationMs":  2062,
+                                           "frames":  [
+                                                          {
+                                                              "ms":  0,
+                                                              "file":  "shots/f639282167812402882.png"
+                                                          },
+                                                          {
+                                                              "ms":  184,
+                                                              "file":  "shots/f639282167816731372.png"
+                                                          },
+                                                          {
+                                                              "ms":  599,
+                                                              "file":  "shots/f639282167820881378.png"
+                                                          },
+                                                          {
+                                                              "ms":  1077,
+                                                              "file":  "shots/f639282167825663702.png"
+                                                          },
+                                                          {
+                                                              "ms":  1529,
+                                                              "file":  "shots/f639282167830185395.png"
+                                                          },
+                                                          {
+                                                              "ms":  1984,
+                                                              "file":  "shots/f639282167834731575.png"
+                                                          }
+                                                      ],
+                                           "kind":  "click",
+                                           "target":  {
+                                                          "y":  252,
+                                                          "w":  34,
+                                                          "h":  34,
+                                                          "x":  1525
+                                                      },
+                                           "zoom":  "none",
+                                           "caption":  "Pin a camera to its planned address with a reservation"
+                                       },
+                                       {
+                                           "actionMs":  0,
+                                           "durationMs":  5810,
+                                           "caption":  "Name it so everyone knows which camera it is",
+                                           "kind":  "type",
+                                           "target":  {
+                                                          "y":  298,
+                                                          "w":  412,
+                                                          "h":  40,
+                                                          "x":  104
+                                                      },
+                                           "frames":  [
+                                                          {
+                                                              "ms":  0,
+                                                              "file":  "shots/f639282167834731575.png"
+                                                          },
+                                                          {
+                                                              "ms":  88,
+                                                              "file":  "shots/f639282167839279894.png"
+                                                          },
+                                                          {
+                                                              "ms":  539,
+                                                              "file":  "shots/f639282167843792354.png"
+                                                          },
+                                                          {
+                                                              "ms":  993,
+                                                              "file":  "shots/f639282167848326638.png"
+                                                          },
+                                                          {
+                                                              "ms":  1433,
+                                                              "file":  "shots/f639282167852727894.png"
+                                                          },
+                                                          {
+                                                              "ms":  1872,
+                                                              "file":  "shots/f639282167857114359.png"
+                                                          },
+                                                          {
+                                                              "ms":  2306,
+                                                              "file":  "shots/f639282167861456500.png"
+                                                          },
+                                                          {
+                                                              "ms":  2744,
+                                                              "file":  "shots/f639282167865843754.png"
+                                                          },
+                                                          {
+                                                              "ms":  3182,
+                                                              "file":  "shots/f639282167870217256.png"
+                                                          },
+                                                          {
+                                                              "ms":  3622,
+                                                              "file":  "shots/f639282167874623033.png"
+                                                          },
+                                                          {
+                                                              "ms":  4055,
+                                                              "file":  "shots/f639282167878944314.png"
+                                                          },
+                                                          {
+                                                              "ms":  4495,
+                                                              "file":  "shots/f639282167883347917.png"
+                                                          },
+                                                          {
+                                                              "ms":  4932,
+                                                              "file":  "shots/f639282167887718320.png"
+                                                          },
+                                                          {
+                                                              "ms":  5370,
+                                                              "file":  "shots/f639282167892097602.png"
+                                                          },
+                                                          {
+                                                              "ms":  5808,
+                                                              "file":  "shots/f639282167896477038.png"
+                                                          }
+                                                      ],
+                                           "zoom":  "target",
+                                           "text":  "Cam 1 - Gate"
+                                       },
+                                       {
+                                           "actionMs":  0,
+                                           "durationMs":  5821,
+                                           "caption":  "Set the address it should always get",
+                                           "kind":  "type",
+                                           "target":  {
+                                                          "y":  456,
+                                                          "w":  412,
+                                                          "h":  40,
+                                                          "x":  104
+                                                      },
+                                           "frames":  [
+                                                          {
+                                                              "ms":  0,
+                                                              "file":  "shots/f639282167896477038.png"
+                                                          },
+                                                          {
+                                                              "ms":  131,
+                                                              "file":  "shots/f639282167900839291.png"
+                                                          },
+                                                          {
+                                                              "ms":  571,
+                                                              "file":  "shots/f639282167905238522.png"
+                                                          },
+                                                          {
+                                                              "ms":  1011,
+                                                              "file":  "shots/f639282167909644252.png"
+                                                          },
+                                                          {
+                                                              "ms":  1444,
+                                                              "file":  "shots/f639282167913973873.png"
+                                                          },
+                                                          {
+                                                              "ms":  1880,
+                                                              "file":  "shots/f639282167918329853.png"
+                                                          },
+                                                          {
+                                                              "ms":  2321,
+                                                              "file":  "shots/f639282167922744074.png"
+                                                          },
+                                                          {
+                                                              "ms":  2756,
+                                                              "file":  "shots/f639282167927092934.png"
+                                                          },
+                                                          {
+                                                              "ms":  3192,
+                                                              "file":  "shots/f639282167931455343.png"
+                                                          },
+                                                          {
+                                                              "ms":  3632,
+                                                              "file":  "shots/f639282167935850476.png"
+                                                          },
+                                                          {
+                                                              "ms":  4069,
+                                                              "file":  "shots/f639282167940220361.png"
+                                                          },
+                                                          {
+                                                              "ms":  4507,
+                                                              "file":  "shots/f639282167944598006.png"
+                                                          },
+                                                          {
+                                                              "ms":  4948,
+                                                              "file":  "shots/f639282167949015227.png"
+                                                          },
+                                                          {
+                                                              "ms":  5380,
+                                                              "file":  "shots/f639282167953335002.png"
+                                                          },
+                                                          {
+                                                              "ms":  5820,
+                                                              "file":  "shots/f639282167957736778.png"
+                                                          }
+                                                      ],
+                                           "zoom":  "target",
+                                           "text":  "192.168.1.11"
+                                       },
+                                       {
+                                           "actionMs":  0,
+                                           "durationMs":  2684,
+                                           "frames":  [
+                                                          {
+                                                              "ms":  0,
+                                                              "file":  "shots/f639282167957736778.png"
+                                                          },
+                                                          {
+                                                              "ms":  238,
+                                                              "file":  "shots/f639282167962144719.png"
+                                                          },
+                                                          {
+                                                              "ms":  647,
+                                                              "file":  "shots/f639282167966235758.png"
+                                                          },
+                                                          {
+                                                              "ms":  1080,
+                                                              "file":  "shots/f639282167970561771.png"
+                                                          },
+                                                          {
+                                                              "ms":  1519,
+                                                              "file":  "shots/f639282167974955901.png"
+                                                          },
+                                                          {
+                                                              "ms":  1954,
+                                                              "file":  "shots/f639282167979306931.png"
+                                                          },
+                                                          {
+                                                              "ms":  2392,
+                                                              "file":  "shots/f639282167983685995.png"
+                                                          }
+                                                      ],
+                                           "kind":  "click",
+                                           "target":  {
+                                                          "y":  618,
+                                                          "w":  96,
+                                                          "h":  40,
+                                                          "x":  420
+                                                      },
+                                           "zoom":  {
+                                                        "y":  70,
+                                                        "w":  1110,
+                                                        "h":  810,
+                                                        "x":  470
+                                                    },
+                                           "caption":  "The camera moves to its reserved address at its next renewal"
+                                       },
+                                       {
+                                           "actionMs":  0,
+                                           "durationMs":  2486,
+                                           "frames":  [
+                                                          {
+                                                              "ms":  0,
+                                                              "file":  "shots/f639282167988087166.png"
+                                                          },
+                                                          {
+                                                              "ms":  227,
+                                                              "file":  "shots/f639282167992505153.png"
+                                                          },
+                                                          {
+                                                              "ms":  660,
+                                                              "file":  "shots/f639282167996839554.png"
+                                                          },
+                                                          {
+                                                              "ms":  1070,
+                                                              "file":  "shots/f639282168000939617.png"
+                                                          },
+                                                          {
+                                                              "ms":  1484,
+                                                              "file":  "shots/f639282168005074224.png"
+                                                          },
+                                                          {
+                                                              "ms":  1919,
+                                                              "file":  "shots/f639282168009424822.png"
+                                                          }
+                                                      ],
+                                           "kind":  "click",
+                                           "target":  {
+                                                          "y":  86,
+                                                          "w":  90,
+                                                          "h":  34,
+                                                          "x":  1472
+                                                      },
+                                           "zoom":  {
+                                                        "y":  70,
+                                                        "w":  380,
+                                                        "h":  810,
+                                                        "x":  100
+                                                    },
+                                           "caption":  "Stop the pool and the adapter goes back to how it was"
+                                       }
+                                   ],
+                         "id":  "dhcp",
+                         "subtitle":  "Hand out addresses when there is no router"
+                     },
+                     {
+                         "title":  "Scan and find cameras",
+                         "steps":  [
+                                       {
+                                           "actionMs":  0,
+                                           "durationMs":  1138,
+                                           "frames":  [
+                                                          {
+                                                              "ms":  0,
+                                                              "file":  "shots/f639282168009424822.png"
+                                                          },
+                                                          {
+                                                              "ms":  579,
+                                                              "file":  "shots/f639282168025047712.png"
+                                                          },
+                                                          {
+                                                              "ms":  969,
+                                                              "file":  "shots/f639282168028945516.png"
+                                                          }
+                                                      ],
+                                           "kind":  "click",
+                                           "target":  {
+                                                          "y":  201,
+                                                          "w":  72,
+                                                          "h":  57,
+                                                          "x":  10
+                                                      },
+                                           "zoom":  "none",
+                                           "caption":  "Open the Scan page"
+                                       },
+                                       {
+                                           "actionMs":  0,
+                                           "durationMs":  1082,
+                                           "frames":  [
+                                                          {
+                                                              "ms":  0,
+                                                              "file":  "shots/f639282168032857932.png"
+                                                          },
+                                                          {
+                                                              "ms":  128,
+                                                              "file":  "shots/f639282168036595329.png"
+                                                          },
+                                                          {
+                                                              "ms":  488,
+                                                              "file":  "shots/f639282168040200085.png"
+                                                          }
+                                                      ],
+                                           "kind":  "click",
+                                           "target":  {
+                                                          "y":  138,
+                                                          "w":  115,
+                                                          "h":  40,
+                                                          "x":  715
+                                                      },
+                                           "zoom":  "target",
+                                           "caption":  "Use adapter fills in the network you are plugged into"
+                                       },
+                                       {
+                                           "actionMs":  0,
+                                           "durationMs":  6151,
+                                           "frames":  [
+                                                          {
+                                                              "ms":  0,
+                                                              "file":  "shots/f639282168047212099.png"
+                                                          },
+                                                          {
+                                                              "ms":  106,
+                                                              "file":  "shots/f639282168050809754.png"
+                                                          },
+                                                          {
+                                                              "ms":  466,
+                                                              "file":  "shots/f639282168054418658.png"
+                                                          },
+                                                          {
+                                                              "ms":  840,
+                                                              "file":  "shots/f639282168058153751.png"
+                                                          },
+                                                          {
+                                                              "ms":  1200,
+                                                              "file":  "shots/f639282168061758189.png"
+                                                          },
+                                                          {
+                                                              "ms":  1581,
+                                                              "file":  "shots/f639282168065565038.png"
+                                                          },
+                                                          {
+                                                              "ms":  1954,
+                                                              "file":  "shots/f639282168069290261.png"
+                                                          },
+                                                          {
+                                                              "ms":  2328,
+                                                              "file":  "shots/f639282168073030765.png"
+                                                          },
+                                                          {
+                                                              "ms":  2702,
+                                                              "file":  "shots/f639282168076775155.png"
+                                                          },
+                                                          {
+                                                              "ms":  3078,
+                                                              "file":  "shots/f639282168080537259.png"
+                                                          },
+                                                          {
+                                                              "ms":  3452,
+                                                              "file":  "shots/f639282168084274474.png"
+                                                          },
+                                                          {
+                                                              "ms":  3826,
+                                                              "file":  "shots/f639282168088019004.png"
+                                                          },
+                                                          {
+                                                              "ms":  4205,
+                                                              "file":  "shots/f639282168091803908.png"
+                                                          },
+                                                          {
+                                                              "ms":  4579,
+                                                              "file":  "shots/f639282168095540762.png"
+                                                          },
+                                                          {
+                                                              "ms":  4951,
+                                                              "file":  "shots/f639282168099267823.png"
+                                                          },
+                                                          {
+                                                              "ms":  5326,
+                                                              "file":  "shots/f639282168103014570.png"
+                                                          },
+                                                          {
+                                                              "ms":  5704,
+                                                              "file":  "shots/f639282168106795404.png"
+                                                          },
+                                                          {
+                                                              "ms":  6082,
+                                                              "file":  "shots/f639282168110573842.png"
+                                                          }
+                                                      ],
+                                           "kind":  "click",
+                                           "target":  {
+                                                          "y":  138,
+                                                          "w":  120,
+                                                          "h":  40,
+                                                          "x":  1458
+                                                      },
+                                           "zoom":  {
+                                                        "y":  70,
+                                                        "w":  1110,
+                                                        "h":  810,
+                                                        "x":  470
+                                                    },
+                                           "caption":  "Scan: each device shows its maker, address, response time and open ports"
+                                       },
+                                       {
+                                           "actionMs":  0,
+                                           "durationMs":  2752,
+                                           "frames":  [
+                                                          {
+                                                              "ms":  0,
+                                                              "file":  "shots/f639282168110573842.png"
+                                                          },
+                                                          {
+                                                              "ms":  100,
+                                                              "file":  "shots/f639282168114293342.png"
+                                                          },
+                                                          {
+                                                              "ms":  473,
+                                                              "file":  "shots/f639282168118022212.png"
+                                                          },
+                                                          {
+                                                              "ms":  1221,
+                                                              "file":  "shots/f639282168125507349.png"
+                                                          },
+                                                          {
+                                                              "ms":  1636,
+                                                              "file":  "shots/f639282168129656342.png"
+                                                          }
+                                                      ],
+                                           "kind":  "click",
+                                           "target":  {
+                                                          "y":  278,
+                                                          "w":  70,
+                                                          "h":  32,
+                                                          "x":  1380
+                                                      },
+                                           "zoom":  {
+                                                        "y":  70,
+                                                        "w":  1110,
+                                                        "h":  810,
+                                                        "x":  470
+                                                    },
+                                           "caption":  "A camera still on its factory address? Reach it adds a matching IP so you can open it"
+                                       }
+                                   ],
+                         "id":  "scan",
+                         "subtitle":  "Every device on the network, even on other subnets"
+                     },
+                     {
+                         "title":  "Monitor a whole site",
+                         "steps":  [
+                                       {
+                                           "actionMs":  0,
+                                           "durationMs":  1124,
+                                           "frames":  [
+                                                          {
+                                                              "ms":  0,
+                                                              "file":  "shots/f639282168129656342.png"
+                                                          },
+                                                          {
+                                                              "ms":  565,
+                                                              "file":  "shots/f639282168148394698.png"
+                                                          }
+                                                      ],
+                                           "kind":  "click",
+                                           "target":  {
+                                                          "y":  264,
+                                                          "w":  72,
+                                                          "h":  57,
+                                                          "x":  10
+                                                      },
+                                           "zoom":  "none",
+                                           "caption":  "Open the Monitor page"
+                                       },
+                                       {
+                                           "actionMs":  0,
+                                           "durationMs":  1368,
+                                           "frames":  [
+                                                          {
+                                                              "ms":  0,
+                                                              "file":  "shots/f639282168148394698.png"
+                                                          },
+                                                          {
+                                                              "ms":  109,
+                                                              "file":  "shots/f639282168159404129.png"
+                                                          },
+                                                          {
+                                                              "ms":  491,
+                                                              "file":  "shots/f639282168163219107.png"
+                                                          },
+                                                          {
+                                                              "ms":  878,
+                                                              "file":  "shots/f639282168167093053.png"
+                                                          }
+                                                      ],
+                                           "kind":  "click",
+                                           "target":  {
+                                                          "y":  140,
+                                                          "w":  135,
+                                                          "h":  36,
+                                                          "x":  1298
+                                                      },
+                                           "zoom":  {
+                                                        "y":  70,
+                                                        "w":  1110,
+                                                        "h":  810,
+                                                        "x":  470
+                                                    },
+                                           "caption":  "Add everything from the scan with one click"
+                                       },
+                                       {
+                                           "actionMs":  0,
+                                           "durationMs":  7602,
+                                           "frames":  [
+                                                          {
+                                                              "ms":  0,
+                                                              "file":  "shots/f639282168194959042.png"
+                                                          },
+                                                          {
+                                                              "ms":  426,
+                                                              "file":  "shots/f639282168457932084.png"
+                                                          },
+                                                          {
+                                                              "ms":  1459,
+                                                              "file":  "shots/f639282168468269713.png"
+                                                          },
+                                                          {
+                                                              "ms":  2490,
+                                                              "file":  "shots/f639282168478578504.png"
+                                                          },
+                                                          {
+                                                              "ms":  3525,
+                                                              "file":  "shots/f639282168488924323.png"
+                                                          },
+                                                          {
+                                                              "ms":  4584,
+                                                              "file":  "shots/f639282168499519024.png"
+                                                          },
+                                                          {
+                                                              "ms":  5632,
+                                                              "file":  "shots/f639282168509998596.png"
+                                                          },
+                                                          {
+                                                              "ms":  6662,
+                                                              "file":  "shots/f639282168520298295.png"
+                                                          }
+                                                      ],
+                                           "kind":  "click",
+                                           "target":  {
+                                                          "y":  81,
+                                                          "w":  130,
+                                                          "h":  40,
+                                                          "x":  1448
+                                                      },
+                                           "zoom":  {
+                                                        "y":  70,
+                                                        "w":  1110,
+                                                        "h":  810,
+                                                        "x":  470
+                                                    },
+                                           "caption":  "Start watching: every device is pinged once a second"
+                                       },
+                                       {
+                                           "actionMs":  0,
+                                           "durationMs":  6500,
+                                           "frames":  [
+                                                          {
+                                                              "ms":  0,
+                                                              "file":  "shots/f639282168530909541.png"
+                                                          },
+                                                          {
+                                                              "ms":  355,
+                                                              "file":  "shots/f639282168534842211.png"
+                                                          },
+                                                          {
+                                                              "ms":  1088,
+                                                              "file":  "shots/f639282168542178289.png"
+                                                          },
+                                                          {
+                                                              "ms":  2184,
+                                                              "file":  "shots/f639282168553132831.png"
+                                                          },
+                                                          {
+                                                              "ms":  3263,
+                                                              "file":  "shots/f639282168563924244.png"
+                                                          },
+                                                          {
+                                                              "ms":  4355,
+                                                              "file":  "shots/f639282168574845726.png"
+                                                          },
+                                                          {
+                                                              "ms":  5434,
+                                                              "file":  "shots/f639282168585637533.png"
+                                                          },
+                                                          {
+                                                              "ms":  6481,
+                                                              "file":  "shots/f639282168596102561.png"
+                                                          }
+                                                      ],
+                                           "kind":  "none",
+                                           "target":  null,
+                                           "zoom":  {
+                                                        "y":  70,
+                                                        "w":  1110,
+                                                        "h":  810,
+                                                        "x":  470
+                                                    },
+                                           "caption":  "If a device stops answering, it turns red and you get an alert straight away"
+                                       },
+                                       {
+                                           "actionMs":  0,
+                                           "durationMs":  4500,
+                                           "frames":  [
+                                                          {
+                                                              "ms":  0,
+                                                              "file":  "shots/f639282168596102561.png"
+                                                          },
+                                                          {
+                                                              "ms":  870,
+                                                              "file":  "shots/f639282168606607220.png"
+                                                          },
+                                                          {
+                                                              "ms":  1276,
+                                                              "file":  "shots/f639282168610660806.png"
+                                                          },
+                                                          {
+                                                              "ms":  2024,
+                                                              "file":  "shots/f639282168618138941.png"
+                                                          },
+                                                          {
+                                                              "ms":  3130,
+                                                              "file":  "shots/f639282168629207190.png"
+                                                          },
+                                                          {
+                                                              "ms":  4207,
+                                                              "file":  "shots/f639282168639976589.png"
+                                                          }
+                                                      ],
+                                           "kind":  "none",
+                                           "target":  null,
+                                           "zoom":  {
+                                                        "y":  70,
+                                                        "w":  1110,
+                                                        "h":  810,
+                                                        "x":  470
+                                                    },
+                                           "caption":  "When it comes back, Net Tools tells you how long it was down"
+                                       }
+                                   ],
+                         "id":  "monitor",
+                         "subtitle":  "Live latency and an alert the moment a device drops"
+                     },
+                     {
+                         "title":  "Troubleshooting tools",
+                         "steps":  [
+                                       {
+                                           "actionMs":  0,
+                                           "durationMs":  1114,
+                                           "frames":  [
+                                                          {
+                                                              "ms":  0,
+                                                              "file":  "shots/f639282168639976589.png"
+                                                          },
+                                                          {
+                                                              "ms":  168,
+                                                              "file":  "shots/f639282168647018681.png"
+                                                          },
+                                                          {
+                                                              "ms":  616,
+                                                              "file":  "shots/f639282168651490636.png"
+                                                          }
+                                                      ],
+                                           "kind":  "click",
+                                           "target":  {
+                                                          "y":  327,
+                                                          "w":  72,
+                                                          "h":  57,
+                                                          "x":  10
+                                                      },
+                                           "zoom":  "none",
+                                           "caption":  "Open the Tools page"
+                                       },
+                                       {
+                                           "actionMs":  0,
+                                           "durationMs":  5987,
+                                           "caption":  "Check which ports a device has open",
+                                           "kind":  "type",
+                                           "target":  {
+                                                          "y":  184,
+                                                          "w":  170,
+                                                          "h":  40,
+                                                          "x":  498
+                                                      },
+                                           "frames":  [
+                                                          {
+                                                              "ms":  0,
+                                                              "file":  "shots/f639282168651490636.png"
+                                                          },
+                                                          {
+                                                              "ms":  127,
+                                                              "file":  "shots/f639282168664175500.png"
+                                                          },
+                                                          {
+                                                              "ms":  577,
+                                                              "file":  "shots/f639282168668673309.png"
+                                                          },
+                                                          {
+                                                              "ms":  1031,
+                                                              "file":  "shots/f639282168673211184.png"
+                                                          },
+                                                          {
+                                                              "ms":  1483,
+                                                              "file":  "shots/f639282168677738907.png"
+                                                          },
+                                                          {
+                                                              "ms":  1939,
+                                                              "file":  "shots/f639282168682294528.png"
+                                                          },
+                                                          {
+                                                              "ms":  2390,
+                                                              "file":  "shots/f639282168686810309.png"
+                                                          },
+                                                          {
+                                                              "ms":  2841,
+                                                              "file":  "shots/f639282168691318944.png"
+                                                          },
+                                                          {
+                                                              "ms":  3298,
+                                                              "file":  "shots/f639282168695882121.png"
+                                                          },
+                                                          {
+                                                              "ms":  3747,
+                                                              "file":  "shots/f639282168700380356.png"
+                                                          },
+                                                          {
+                                                              "ms":  4205,
+                                                              "file":  "shots/f639282168704953316.png"
+                                                          },
+                                                          {
+                                                              "ms":  4655,
+                                                              "file":  "shots/f639282168709454233.png"
+                                                          },
+                                                          {
+                                                              "ms":  5107,
+                                                              "file":  "shots/f639282168713975856.png"
+                                                          },
+                                                          {
+                                                              "ms":  5564,
+                                                              "file":  "shots/f639282168718550584.png"
+                                                          }
+                                                      ],
+                                           "zoom":  {
+                                                        "x":  470,
+                                                        "y":  70,
+                                                        "w":  1110,
+                                                        "h":  810
+                                                    },
+                                           "text":  "192.168.1.20"
+                                       },
+                                       {
+                                           "actionMs":  0,
+                                           "durationMs":  2027,
+                                           "frames":  [
+                                                          {
+                                                              "ms":  0,
+                                                              "file":  "shots/f639282168723043960.png"
+                                                          },
+                                                          {
+                                                              "ms":  174,
+                                                              "file":  "shots/f639282168727576418.png"
+                                                          },
+                                                          {
+                                                              "ms":  633,
+                                                              "file":  "shots/f639282168732164133.png"
+                                                          }
+                                                      ],
+                                           "kind":  "click",
+                                           "target":  {
+                                                          "y":  184,
+                                                          "w":  90,
+                                                          "h":  40,
+                                                          "x":  1457
+                                                      },
+                                           "zoom":  {
+                                                        "x":  470,
+                                                        "y":  70,
+                                                        "w":  1110,
+                                                        "h":  810
+                                                    },
+                                           "caption":  "Open ports are shown by name: web, RTSP video, Hikvision SDK and more"
+                                       },
+                                       {
+                                           "actionMs":  0,
+                                           "durationMs":  21329,
+                                           "caption":  "Prove a camera is serving video, without playing it",
+                                           "kind":  "type",
+                                           "target":  {
+                                                          "y":  382,
+                                                          "w":  1049,
+                                                          "h":  40,
+                                                          "x":  498
+                                                      },
+                                           "frames":  [
+                                                          {
+                                                              "ms":  0,
+                                                              "file":  "shots/f639282168753132119.png"
+                                                          },
+                                                          {
+                                                              "ms":  518,
+                                                              "file":  "shots/f639282168761853286.png"
+                                                          },
+                                                          {
+                                                              "ms":  973,
+                                                              "file":  "shots/f639282168766405727.png"
+                                                          },
+                                                          {
+                                                              "ms":  1423,
+                                                              "file":  "shots/f639282168770910990.png"
+                                                          },
+                                                          {
+                                                              "ms":  1874,
+                                                              "file":  "shots/f639282168775417368.png"
+                                                          },
+                                                          {
+                                                              "ms":  2334,
+                                                              "file":  "shots/f639282168780013720.png"
+                                                          },
+                                                          {
+                                                              "ms":  2786,
+                                                              "file":  "shots/f639282168784538967.png"
+                                                          },
+                                                          {
+                                                              "ms":  3236,
+                                                              "file":  "shots/f639282168789037222.png"
+                                                          },
+                                                          {
+                                                              "ms":  3690,
+                                                              "file":  "shots/f639282168793581164.png"
+                                                          },
+                                                          {
+                                                              "ms":  4144,
+                                                              "file":  "shots/f639282168798119825.png"
+                                                          },
+                                                          {
+                                                              "ms":  4594,
+                                                              "file":  "shots/f639282168802618869.png"
+                                                          },
+                                                          {
+                                                              "ms":  5051,
+                                                              "file":  "shots/f639282168807182064.png"
+                                                          },
+                                                          {
+                                                              "ms":  5503,
+                                                              "file":  "shots/f639282168811708911.png"
+                                                          },
+                                                          {
+                                                              "ms":  5957,
+                                                              "file":  "shots/f639282168816245691.png"
+                                                          },
+                                                          {
+                                                              "ms":  6409,
+                                                              "file":  "shots/f639282168820764331.png"
+                                                          },
+                                                          {
+                                                              "ms":  6858,
+                                                              "file":  "shots/f639282168825257311.png"
+                                                          },
+                                                          {
+                                                              "ms":  7313,
+                                                              "file":  "shots/f639282168829809515.png"
+                                                          },
+                                                          {
+                                                              "ms":  7769,
+                                                              "file":  "shots/f639282168834363075.png"
+                                                          },
+                                                          {
+                                                              "ms":  8216,
+                                                              "file":  "shots/f639282168838840458.png"
+                                                          },
+                                                          {
+                                                              "ms":  8673,
+                                                              "file":  "shots/f639282168843404800.png"
+                                                          },
+                                                          {
+                                                              "ms":  9125,
+                                                              "file":  "shots/f639282168847922512.png"
+                                                          },
+                                                          {
+                                                              "ms":  9577,
+                                                              "file":  "shots/f639282168852445345.png"
+                                                          },
+                                                          {
+                                                              "ms":  10034,
+                                                              "file":  "shots/f639282168857017790.png"
+                                                          },
+                                                          {
+                                                              "ms":  10484,
+                                                              "file":  "shots/f639282168861512206.png"
+                                                          },
+                                                          {
+                                                              "ms":  10939,
+                                                              "file":  "shots/f639282168866070914.png"
+                                                          },
+                                                          {
+                                                              "ms":  11399,
+                                                              "file":  "shots/f639282168870661296.png"
+                                                          },
+                                                          {
+                                                              "ms":  11843,
+                                                              "file":  "shots/f639282168875105314.png"
+                                                          },
+                                                          {
+                                                              "ms":  12297,
+                                                              "file":  "shots/f639282168879649572.png"
+                                                          },
+                                                          {
+                                                              "ms":  12752,
+                                                              "file":  "shots/f639282168884196533.png"
+                                                          },
+                                                          {
+                                                              "ms":  13203,
+                                                              "file":  "shots/f639282168888708571.png"
+                                                          },
+                                                          {
+                                                              "ms":  13660,
+                                                              "file":  "shots/f639282168893271558.png"
+                                                          },
+                                                          {
+                                                              "ms":  14109,
+                                                              "file":  "shots/f639282168897771157.png"
+                                                          },
+                                                          {
+                                                              "ms":  14569,
+                                                              "file":  "shots/f639282168902363079.png"
+                                                          },
+                                                          {
+                                                              "ms":  15017,
+                                                              "file":  "shots/f639282168906846207.png"
+                                                          },
+                                                          {
+                                                              "ms":  15471,
+                                                              "file":  "shots/f639282168911385229.png"
+                                                          },
+                                                          {
+                                                              "ms":  15923,
+                                                              "file":  "shots/f639282168915904061.png"
+                                                          },
+                                                          {
+                                                              "ms":  16378,
+                                                              "file":  "shots/f639282168920458953.png"
+                                                          },
+                                                          {
+                                                              "ms":  16832,
+                                                              "file":  "shots/f639282168924999185.png"
+                                                          },
+                                                          {
+                                                              "ms":  17279,
+                                                              "file":  "shots/f639282168929467776.png"
+                                                          },
+                                                          {
+                                                              "ms":  17737,
+                                                              "file":  "shots/f639282168934044535.png"
+                                                          },
+                                                          {
+                                                              "ms":  18195,
+                                                              "file":  "shots/f639282168938622715.png"
+                                                          },
+                                                          {
+                                                              "ms":  18643,
+                                                              "file":  "shots/f639282168943106768.png"
+                                                          },
+                                                          {
+                                                              "ms":  19098,
+                                                              "file":  "shots/f639282168947652758.png"
+                                                          },
+                                                          {
+                                                              "ms":  19548,
+                                                              "file":  "shots/f639282168952156054.png"
+                                                          },
+                                                          {
+                                                              "ms":  20000,
+                                                              "file":  "shots/f639282168956680280.png"
+                                                          },
+                                                          {
+                                                              "ms":  20452,
+                                                              "file":  "shots/f639282168961198996.png"
+                                                          },
+                                                          {
+                                                              "ms":  20911,
+                                                              "file":  "shots/f639282168965790601.png"
+                                                          }
+                                                      ],
+                                           "zoom":  {
+                                                        "x":  470,
+                                                        "y":  70,
+                                                        "w":  1110,
+                                                        "h":  810
+                                                    },
+                                           "text":  "rtsp://192.168.1.20:554/Streaming/Channels/101"
+                                       },
+                                       {
+                                           "actionMs":  0,
+                                           "durationMs":  2026,
+                                           "frames":  [
+                                                          {
+                                                              "ms":  0,
+                                                              "file":  "shots/f639282168965790601.png"
+                                                          },
+                                                          {
+                                                              "ms":  176,
+                                                              "file":  "shots/f639282168974509956.png"
+                                                          },
+                                                          {
+                                                              "ms":  649,
+                                                              "file":  "shots/f639282168979237981.png"
+                                                          },
+                                                          {
+                                                              "ms":  1114,
+                                                              "file":  "shots/f639282168983889825.png"
+                                                          }
+                                                      ],
+                                           "kind":  "click",
+                                           "target":  {
+                                                          "y":  430,
+                                                          "w":  90,
+                                                          "h":  40,
+                                                          "x":  1457
+                                                      },
+                                           "zoom":  {
+                                                        "x":  470,
+                                                        "y":  70,
+                                                        "w":  1110,
+                                                        "h":  810
+                                                    },
+                                           "caption":  "Net Tools reads the stream details: codec and audio, with camera login if needed"
+                                       },
+                                       {
+                                           "actionMs":  0,
+                                           "durationMs":  3707,
+                                           "caption":  "Trace the route to any address, from the adapter you chose",
+                                           "kind":  "type",
+                                           "target":  {
+                                                          "y":  577,
+                                                          "w":  951,
+                                                          "h":  40,
+                                                          "x":  498
+                                                      },
+                                           "frames":  [
+                                                          {
+                                                              "ms":  0,
+                                                              "file":  "shots/f639282168997224537.png"
+                                                          },
+                                                          {
+                                                              "ms":  565,
+                                                              "file":  "shots/f639282169006064989.png"
+                                                          },
+                                                          {
+                                                              "ms":  1038,
+                                                              "file":  "shots/f639282169010792581.png"
+                                                          },
+                                                          {
+                                                              "ms":  1487,
+                                                              "file":  "shots/f639282169015291450.png"
+                                                          },
+                                                          {
+                                                              "ms":  1943,
+                                                              "file":  "shots/f639282169019845206.png"
+                                                          },
+                                                          {
+                                                              "ms":  2397,
+                                                              "file":  "shots/f639282169024390743.png"
+                                                          },
+                                                          {
+                                                              "ms":  2850,
+                                                              "file":  "shots/f639282169028913337.png"
+                                                          },
+                                                          {
+                                                              "ms":  3301,
+                                                              "file":  "shots/f639282169033428950.png"
+                                                          }
+                                                      ],
+                                           "zoom":  {
+                                                        "x":  470,
+                                                        "y":  70,
+                                                        "w":  1110,
+                                                        "h":  810
+                                                    },
+                                           "text":  "8.8.8.8"
+                                       },
+                                       {
+                                           "actionMs":  0,
+                                           "durationMs":  2428,
+                                           "frames":  [
+                                                          {
+                                                              "ms":  0,
+                                                              "file":  "shots/f639282169037945944.png"
+                                                          },
+                                                          {
+                                                              "ms":  168,
+                                                              "file":  "shots/f639282169042524747.png"
+                                                          },
+                                                          {
+                                                              "ms":  618,
+                                                              "file":  "shots/f639282169047020704.png"
+                                                          },
+                                                          {
+                                                              "ms":  1058,
+                                                              "file":  "shots/f639282169051423570.png"
+                                                          }
+                                                      ],
+                                           "kind":  "click",
+                                           "target":  {
+                                                          "y":  577,
+                                                          "w":  90,
+                                                          "h":  40,
+                                                          "x":  1457
+                                                      },
+                                           "zoom":  {
+                                                        "x":  470,
+                                                        "y":  70,
+                                                        "w":  1110,
+                                                        "h":  810
+                                                    },
+                                           "caption":  "Each hop and its response time appear as they are found"
+                                       },
+                                       {
+                                           "actionMs":  0,
+                                           "durationMs":  1820,
+                                           "frames":  [
+                                                          {
+                                                              "ms":  0,
+                                                              "file":  "shots/f639282169072025413.png"
+                                                          },
+                                                          {
+                                                              "ms":  634,
+                                                              "file":  "shots/f639282169080822345.png"
+                                                          }
+                                                      ],
+                                           "kind":  "click",
+                                           "target":  {
+                                                          "y":  810,
+                                                          "w":  76,
+                                                          "h":  34,
+                                                          "x":  1471
+                                                      },
+                                           "zoom":  {
+                                                        "x":  470,
+                                                        "y":  70,
+                                                        "w":  1110,
+                                                        "h":  810
+                                                    },
+                                           "caption":  "Link health shows traffic, errors and dropped packets on the cable"
+                                       }
+                                   ],
+                         "id":  "tools",
+                         "subtitle":  "Ports, video streams, routes, DNS and cable health"
+                     }
+                 ]
 }

@@ -151,10 +151,7 @@ namespace Cre8Labs.NetTools
         {
             if (App.CaptureFolder != null)
             {
-                Width = CaptureRecorder.Width;
-                Height = CaptureRecorder.Height;
-                Left = 0;
-                Top = 0;
+                CaptureRecorder.FitWindow(this);
                 new CaptureRecorder(this, App.CaptureFolder);
             }
             BrandText.Text = $"v{Assembly.GetEntryAssembly().GetName().Version.ToString(3)}   cre8labs.uk";

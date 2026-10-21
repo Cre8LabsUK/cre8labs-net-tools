@@ -23,9 +23,13 @@ Add-Type @"
 using System; using System.Runtime.InteropServices;
 public static class Cap {
   [DllImport("user32.dll")] public static extern bool GetWindowRect(IntPtr h, out RECT r);
+  [DllImport("user32.dll")] public static extern int GetDpiForWindow(IntPtr h);
+  [DllImport("user32.dll")] public static extern IntPtr SetThreadDpiAwarenessContext(IntPtr c);
   public struct RECT { public int L, T, R, B; }
 }
 "@
+# Work in physical pixels, so positions do not depend on how Windows scales this script.
+[Cap]::SetThreadDpiAwarenessContext([IntPtr](-4)) | Out-Null
 $A = [System.Windows.Automation.AutomationElement]
 $TW = 1600; $TH = 900   # the app's capture size, in its own units
 
@@ -77,7 +81,7 @@ function WaitDialog() {
 function Box($el) {
     $b = $el.Current.BoundingRectangle
     $m = Rect $h
-    $s = ($m.R - $m.L) / $TW
+    $s = [Cap]::GetDpiForWindow($h) / 96
     @{ x = [int](($b.X - $m.L) / $s); y = [int](($b.Y - $m.T) / $s); w = [int]($b.Width / $s); h = [int]($b.Height / $s) }
 }
 
@@ -208,22 +212,22 @@ try {
     Chapter 'tools' 'Troubleshooting tools' 'Ports, video streams, routes, DNS and cable health'
     $nav = ByName $win 'Tools page'
     Step 'Open the Tools page' $nav { PickPage $nav } 900 'none'
-    TypeStep 'Check which ports a device has open' (ById $win 'PortHostBox') '192.168.1.20'
+    TypeStep 'Check which ports a device has open' (ById $win 'PortHostBox') '192.168.1.20' $RightColumn
     $check = ByName $win 'Check ports'
-    Step 'Open ports are shown by name: web, RTSP video, Hikvision SDK and more' $check { Invoke $check } 1800 'target'
+    Step 'Open ports are shown by name: web, RTSP video, Hikvision SDK and more' $check { Invoke $check } 1800 $RightColumn
     $rtsp = ById $win 'RtspUrlBox'
     ScrollTo $rtsp
-    TypeStep "Prove a camera is serving video, without playing it" $rtsp 'rtsp://192.168.1.20:554/Streaming/Channels/101'
+    TypeStep "Prove a camera is serving video, without playing it" $rtsp 'rtsp://192.168.1.20:554/Streaming/Channels/101' $RightColumn
     $rcheck = ByName $win 'Check RTSP stream'
-    Step 'Net Tools reads the stream details: codec and audio, with camera login if needed' $rcheck { Invoke $rcheck } 1800 'target'
+    Step 'Net Tools reads the stream details: codec and audio, with camera login if needed' $rcheck { Invoke $rcheck } 1800 $RightColumn
     $trace = ById $win 'TraceTargetBox'
     ScrollTo $trace
-    TypeStep 'Trace the route to any address, from the adapter you chose' $trace '8.8.8.8'
+    TypeStep 'Trace the route to any address, from the adapter you chose' $trace '8.8.8.8' $RightColumn
     $tgo = ByName $win 'Start or stop traceroute'
-    Step 'Each hop and its response time appear as they are found' $tgo { Invoke $tgo } 2200 'target'
+    Step 'Each hop and its response time appear as they are found' $tgo { Invoke $tgo } 2200 $RightColumn
     $link = ByName $win 'Refresh link health'
     ScrollTo $link
-    Step 'Link health shows traffic, errors and dropped packets on the cable' $link { Invoke $link } 1600 'target'
+    Step 'Link health shows traffic, errors and dropped packets on the cable' $link { Invoke $link } 1600 $RightColumn
 }
 finally {
     Start-Sleep -Milliseconds 300

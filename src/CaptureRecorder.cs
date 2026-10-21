@@ -44,6 +44,22 @@ namespace Cre8Labs.NetTools
             return IntPtr.Zero;
         }
 
+        /// <summary>
+        /// Fixes the main window's content at the capture size and sizes the window to match, whatever the screen
+        /// size (a small remote desktop screen would otherwise squeeze the layout).
+        /// </summary>
+        public static void FitWindow(Window main)
+        {
+            if (main.Content is FrameworkElement root)
+            {
+                root.Width = Width;
+                root.Height = Height;
+            }
+            var dpi = VisualTreeHelper.GetDpi(main);
+            var hwnd = new System.Windows.Interop.WindowInteropHelper(main).Handle;
+            SetWindowPos(hwnd, IntPtr.Zero, 0, 0, (int)Math.Round(Width * dpi.DpiScaleX), (int)Math.Round(Height * dpi.DpiScaleY), 0x0014);
+        }
+
         public CaptureRecorder(Window main, string folder)
         {
             _main = main;
@@ -57,13 +73,12 @@ namespace Cre8Labs.NetTools
 
         static RenderTargetBitmap Render(Window window, int w, int h)
         {
-            // With no live display (for example a disconnected remote session) WPF pauses its own layout pass,
-            // so lay the content out at the capture size ourselves before drawing it.
+            // The window can be smaller than the capture size on a small screen, which would clip the content,
+            // so lay it out at the capture size before drawing it.
             if (window.Content is UIElement element)
             {
                 element.Measure(new Size(w, h));
                 element.Arrange(new Rect(0, 0, w, h));
-                element.UpdateLayout();
             }
             var bitmap = new RenderTargetBitmap(w * Scale, h * Scale, 96 * Scale, 96 * Scale, PixelFormats.Pbgra32);
             var background = new DrawingVisual();

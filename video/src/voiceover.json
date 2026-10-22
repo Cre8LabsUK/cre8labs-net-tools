@@ -1,0 +1,56 @@
+{
+  "voice": "en-GB-RyanNeural",
+  "rate": "+0%",
+  "lines": {
+    "intro": "This is Net Tools from Cre8Labs. One app to switch IP addresses, hand out DHCP, find cameras and keep an eye on a whole site. Let's take a look.",
+
+    "presets-card": "Part one. Switch IP in one click.",
+    "presets-0": "On the left is the adapter you're working on, with its live address, link speed and DNS.",
+    "presets-1": "To change network, just click a preset. The adapter switches in about a second.",
+    "presets-2": "Need automatic addressing again? One click puts it back on DHCP. Or press zero.",
+    "presets-3": "Every preset has its own key. Press two, or click, to jump to the Site A cameras.",
+    "presets-4": "Let's save a new network as a preset.",
+    "presets-5": "Give it a name.",
+    "presets-6": "Enter the IP address.",
+    "presets-7": "For the mask, type the full mask, or just slash twenty four.",
+    "presets-8": "Gateway and DNS are optional, and the subnet is checked as you type.",
+    "presets-9": "Save it, and the new preset appears on its own tile, with its own shortcut.",
+    "presets-10": "Shortcuts can be changed, switched off, or set to work from any app.",
+    "presets-11": "Close the shortcuts window when you're done.",
+
+    "dhcp-card": "Part two. A DHCP pool for your cameras.",
+    "dhcp-0": "Open the DHCP pool page.",
+    "dhcp-1": "Type the network you want to serve. The server address and range are filled in for you.",
+    "dhcp-2": "Start the pool, plug in your cameras, and watch them pick up addresses.",
+    "dhcp-3": "To pin a camera to its planned address, add a reservation.",
+    "dhcp-4": "Name it, so everyone knows which camera it is.",
+    "dhcp-5": "And set the address it should always get.",
+    "dhcp-6": "Save, and the camera moves to its reserved address at its next renewal.",
+    "dhcp-7": "When you're finished, stop the pool, and the adapter goes back to exactly how it was.",
+
+    "scan-card": "Part three. Scan and find cameras.",
+    "scan-0": "Open the Scan page.",
+    "scan-1": "Use adapter fills in the network you're plugged into.",
+    "scan-2": "Press Scan. Each device shows its maker, address, response time and open ports.",
+    "scan-3": "This camera is still on its factory address. Reach it adds a matching IP, so you can open it straight away.",
+
+    "monitor-card": "Part four. Monitor a whole site.",
+    "monitor-0": "Open the Monitor page.",
+    "monitor-1": "Add everything you just scanned, with one click.",
+    "monitor-2": "Start monitoring. Every device is pinged once a second, from the adapter you chose.",
+    "monitor-3": "If a device stops answering, it turns red, and you get an alert straight away.",
+    "monitor-4": "When it comes back, Net Tools tells you how long it was down.",
+
+    "tools-card": "Part five. Troubleshooting tools.",
+    "tools-0": "Finally, the Tools page.",
+    "tools-1": "Enter a device to check which ports it has open.",
+    "tools-2": "Open ports are shown by name. Web, RTSP video, Hikvision SDK and more.",
+    "tools-3": "To prove a camera is serving video, paste its stream address.",
+    "tools-4": "Net Tools reads the stream details, like the codec and audio, without playing the video.",
+    "tools-5": "Traceroute shows the path to any address.",
+    "tools-6": "Each hop and its response time appear as they're found.",
+    "tools-7": "And link health shows traffic, errors and dropped packets on the cable.",
+
+    "outro": "That's Net Tools. It's free and open source, for Windows ten and eleven. Download it from GitHub, and find more at cre8labs dot U K."
+  }
+}

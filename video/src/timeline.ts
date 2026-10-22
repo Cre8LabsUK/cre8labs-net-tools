@@ -1,4 +1,5 @@
 import data from './timeline.json';
+import voTiming from './voiceover-timing.json';
 
 export const FPS = 30;
 export const APP_W = 1600;
@@ -18,25 +19,36 @@ export type Step = {
   actionMs: number;
   /** How long the step was filmed for, in ms. */
   durationMs: number;
+  /** Its voiceover line, in voiceover.json. */
+  vo: string;
 };
 export type Chapter = {id: string; title: string; subtitle: string; steps: Step[]};
 export type Timeline = {chapters: Chapter[]};
 
-export const timeline = data as unknown as Timeline;
+const raw = data as unknown as Timeline;
+export const timeline: Timeline = {
+  chapters: raw.chapters.map((c) => ({...c, steps: c.steps.map((s, i) => ({...s, vo: `${c.id}-${i}`}))})),
+};
+
+/** Voiceover lines start this many frames into their scene. */
+export const VO_DELAY = 8;
+const spoken = voTiming as Record<string, number>;
+export const voFrames = (key: string) => Math.ceil((spoken[key] ?? 0) * FPS);
 
 /** Frames for the cursor to travel to its target before the click lands. */
 export const leadFrames = (step: Step) => (step.kind === 'click' ? 30 : step.kind === 'type' ? 26 : 8);
 const HOLD = 24;
 
+/** A step lasts as long as its recording or its voiceover, whichever is longer. */
 export const stepFrames = (step: Step) =>
-  leadFrames(step) + Math.ceil(((step.durationMs - step.actionMs) / 1000) * FPS) + HOLD;
+  Math.max(leadFrames(step) + Math.ceil(((step.durationMs - step.actionMs) / 1000) * FPS) + HOLD, VO_DELAY + voFrames(step.vo) + 14);
 
-export const INTRO = 120;
-export const CHAPTER_CARD = 84;
-export const OUTRO = 150;
+export const INTRO = Math.max(120, VO_DELAY + voFrames('intro') + 24);
+export const OUTRO = Math.max(150, VO_DELAY + voFrames('outro') + 45);
+export const cardFrames = (chapter: Chapter) => Math.max(84, VO_DELAY + voFrames(`${chapter.id}-card`) + 18);
 
 export const chapterFrames = (chapter: Chapter) =>
-  CHAPTER_CARD + chapter.steps.reduce((sum, s) => sum + stepFrames(s), 0);
+  cardFrames(chapter) + chapter.steps.reduce((sum, s) => sum + stepFrames(s), 0);
 
 /** The frame of the app to show for a time within a step (video frames since the step began). */
 export const frameAt = (step: Step, local: number): string => {

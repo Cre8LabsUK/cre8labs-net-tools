@@ -1,9 +1,10 @@
 import React from 'react';
-import {AbsoluteFill, Easing, Img, interpolate, Sequence, spring, staticFile, useCurrentFrame, useVideoConfig} from 'remotion';
+import {AbsoluteFill, Audio, Easing, Img, interpolate, Sequence, spring, staticFile, useCurrentFrame, useVideoConfig} from 'remotion';
 import {loadFont as loadPoppins} from '@remotion/google-fonts/Poppins';
 import {loadFont as loadInter} from '@remotion/google-fonts/Inter';
 import {
-  APP_H, APP_W, Box, Chapter, CHAPTER_CARD, chapterFrames, frameAt, INTRO, leadFrames, OUTRO, Step, stepFrames, timeline, zoomRect,
+  APP_H, APP_W, Box, cardFrames, Chapter, chapterFrames, FPS, frameAt, INTRO, leadFrames, OUTRO, Step, stepFrames, timeline,
+  VO_DELAY, voFrames, zoomRect,
 } from './timeline';
 
 const {fontFamily: display} = loadPoppins('normal', {weights: ['500', '600', '700'], subsets: ['latin']});
@@ -30,6 +31,34 @@ const VIEW_Y = 70;
 const ease = Easing.bezier(0.33, 0, 0.2, 1);
 const clamp = {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'} as const;
 
+// ------------------------------------------------------------------ sound
+
+/** A voiceover line from voiceover.json, starting just after its scene does. */
+const Voice: React.FC<{line: string}> = ({line}) => (
+  <Sequence from={VO_DELAY} layout="none">
+    <Audio src={staticFile(`vo/${line}.mp3`)} />
+  </Sequence>
+);
+
+const Sfx: React.FC<{name: string; from: number; frames: number; volume: number; loop?: boolean}> = ({name, from, frames, volume, loop}) => (
+  <Sequence from={from} durationInFrames={frames} layout="none">
+    <Audio src={staticFile(`sfx/${name}.wav`)} volume={volume} loop={loop} />
+  </Sequence>
+);
+
+/** Music volume: quiet under the voice, a little fuller in the gaps, faded in and out at the ends. */
+const musicVolume = (frame: number, total: number, speech: [number, number][]) => {
+  const ramp = 10;
+  let duck = 0;
+  for (const [a, b] of speech) {
+    if (frame > a - ramp && frame < b + ramp) {
+      duck = Math.max(duck, Math.min(1, (frame - (a - ramp)) / ramp, (b + ramp - frame) / ramp));
+    }
+  }
+  const fade = Math.min(1, frame / 30, (total - frame) / 45);
+  return Math.max(0, fade) * (0.3 - 0.17 * duck);
+};
+
 // ------------------------------------------------------------------ title cards
 
 const Logo: React.FC<{size: number}> = ({size}) => (
@@ -46,6 +75,8 @@ const Intro: React.FC = () => {
   const out = interpolate(frame, [INTRO - 12, INTRO], [1, 0], clamp);
   return (
     <AbsoluteFill style={{background: BACKDROP, alignItems: 'center', justifyContent: 'center', opacity: out}}>
+      <Sfx name="whoosh" from={0} frames={24} volume={0.5} />
+      <Voice line="intro" />
       <div style={{transform: `scale(${0.8 + 0.2 * pop})`, opacity: pop}}>
         <Logo size={150} />
       </div>
@@ -65,10 +96,13 @@ const Intro: React.FC = () => {
 const ChapterCard: React.FC<{chapter: Chapter; index: number}> = ({chapter, index}) => {
   const frame = useCurrentFrame();
   const {fps} = useVideoConfig();
+  const length = cardFrames(chapter);
   const inn = spring({frame, fps, config: {damping: 200}});
-  const out = interpolate(frame, [CHAPTER_CARD - 10, CHAPTER_CARD], [1, 0], clamp);
+  const out = interpolate(frame, [length - 10, length], [1, 0], clamp);
   return (
     <AbsoluteFill style={{background: BACKDROP, alignItems: 'center', justifyContent: 'center', opacity: out}}>
+      <Sfx name="whoosh" from={0} frames={24} volume={0.5} />
+      <Voice line={`${chapter.id}-card`} />
       <div style={{fontFamily: display, fontSize: 30, fontWeight: 600, color: 'white', background: GRADIENT, padding: '10px 26px', borderRadius: 999, opacity: inn}}>
         Part {index + 1}
       </div>
@@ -89,6 +123,8 @@ const Outro: React.FC = () => {
   const fadeIn = interpolate(frame, [0, 10], [0, 1], clamp);
   return (
     <AbsoluteFill style={{background: BACKDROP, alignItems: 'center', justifyContent: 'center', opacity: fadeIn}}>
+      <Sfx name="whoosh" from={0} frames={24} volume={0.5} />
+      <Voice line="outro" />
       <Logo size={120} />
       <div style={{fontFamily: display, color: 'white', fontSize: 80, fontWeight: 700, marginTop: 36, opacity: rise(4)}}>Get Net Tools free</div>
       <div style={{fontFamily: body, color: 'rgba(255,255,255,0.85)', fontSize: 34, marginTop: 14, opacity: rise(10)}}>
@@ -154,8 +190,16 @@ const StepScene: React.FC<{step: Step; prev: Step | null; chapterIndex: number; 
   const capIn = spring({frame: frame - 2, fps, config: {damping: 200}});
   const capOut = interpolate(frame, [stepFrames(step) - 6, stepFrames(step)], [1, 0], clamp);
 
+  // A whoosh when the camera moves somewhere noticeably different
+  const moves = Math.abs(to.scale - from.scale) > 0.15 || Math.hypot(to.tx - from.tx, to.ty - from.ty) > 150;
+  const typing = step.kind === 'type' ? Math.ceil((step.text ?? '').length * 0.11 * FPS) : 0;
+
   return (
     <AbsoluteFill>
+      <Voice line={step.vo} />
+      {moves ? <Sfx name="whoosh" from={0} frames={22} volume={0.25} /> : null}
+      {step.kind === 'click' ? <Sfx name="click" from={lead - 1} frames={6} volume={0.8} /> : null}
+      {typing > 0 ? <Sfx name="keys" from={lead} frames={typing} volume={0.7} loop /> : null}
       <div style={{position: 'absolute', left: VIEW_X, top: VIEW_Y, width: VIEW_W, height: VIEW_H, borderRadius: 18, overflow: 'hidden', boxShadow: '0 30px 80px rgba(0,0,0,0.45), 0 0 0 1px rgba(255,255,255,0.10)', background: '#F3F5FA'}}>
         <div style={{position: 'absolute', left: 0, top: 0, width: APP_W, height: APP_H, transformOrigin: '0 0', transform: `translate(${cam.tx}px, ${cam.ty}px) scale(${cam.scale})`}}>
           <Img src={staticFile(frameAt(step, frame))} style={{width: APP_W, height: APP_H, display: 'block'}} />
@@ -194,10 +238,10 @@ const StepScene: React.FC<{step: Step; prev: Step | null; chapterIndex: number; 
 
 const ChapterScenes: React.FC<{chapter: Chapter; index: number}> = ({chapter, index}) => {
   const {fps} = useVideoConfig();
-  let at = CHAPTER_CARD;
+  let at = cardFrames(chapter);
   return (
     <AbsoluteFill style={{background: BACKDROP}}>
-      <Sequence durationInFrames={CHAPTER_CARD} premountFor={fps}>
+      <Sequence durationInFrames={cardFrames(chapter)} premountFor={fps}>
         <ChapterCard chapter={chapter} index={index} />
       </Sequence>
       {chapter.steps.map((step, i) => {
@@ -232,9 +276,29 @@ export const explainerFrames = ({chapters, intro}: ExplainerProps) =>
 export const Explainer: React.FC<ExplainerProps> = ({chapters, intro}) => {
   const {fps, durationInFrames} = useVideoConfig();
   const selected = timeline.chapters.map((c, i) => ({c, i})).filter(({c}) => chapters.includes(c.id));
+
+  // When the voice is speaking, so the music can dip under it
+  const speech: [number, number][] = [];
+  const said = (start: number, line: string) => speech.push([start + VO_DELAY, start + VO_DELAY + voFrames(line)]);
+  let t = 0;
+  if (intro) {
+    said(0, 'intro');
+    t = INTRO;
+  }
+  for (const {c} of selected) {
+    said(t, `${c.id}-card`);
+    t += cardFrames(c);
+    for (const s of c.steps) {
+      said(t, s.vo);
+      t += stepFrames(s);
+    }
+  }
+  said(t, 'outro');
+
   let at = intro ? INTRO : 0;
   return (
     <AbsoluteFill style={{background: BACKDROP}}>
+      <Audio src={staticFile('sfx/music.wav')} loop volume={(f) => musicVolume(f, durationInFrames, speech)} />
       {intro ? (
         <Sequence durationInFrames={INTRO} premountFor={fps}>
           <Intro />

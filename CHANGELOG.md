@@ -2,6 +2,17 @@
 
 All notable changes to this project are listed here. The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) and the project uses [semantic versioning](https://semver.org/).
 
+## [Unreleased]
+
+### Added
+
+- A narrated explainer video in the README, and new screenshots of every page
+- `video/`: tooling that records the demo app and edits it into explainer videos
+
+### Fixed
+
+- Buttons in the DHCP pool's device list could miss a click when the list refreshed
+
 ## [1.3.0] - 2026-10-21
 
 ### Added

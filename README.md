@@ -26,6 +26,13 @@
   <img src="docs/screenshot.png" alt="Main window with presets, live adapter status and quick ping" width="860">
 </p>
 
+### Watch the 4 minute tour
+
+<p align="center">
+  <a href="docs/net-tools-explainer.mp4"><img src="docs/explainer-thumb.png" alt="Play the Net Tools explainer video" width="640"></a><br>
+  <sub>Presets, the DHCP pool, scanning, monitoring and the troubleshooting tools, with narration</sub>
+</p>
+
 ## Features
 
 | | |
@@ -48,11 +55,11 @@
 
 <table>
   <tr>
-    <td width="62%"><img src="docs/switching.png" alt="Applying a preset, with the activity log open"></td>
+    <td width="62%"><img src="docs/switching.png" alt="Switching to the Office LAN preset"></td>
     <td width="38%"><img src="docs/preset-editor.png" alt="Preset editor with live subnet info"></td>
   </tr>
   <tr>
-    <td align="center"><sub>Switching networks, with the activity log open</sub></td>
+    <td align="center"><sub>Switching networks in one click</sub></td>
     <td align="center"><sub>Preset editor with live subnet info</sub></td>
   </tr>
 </table>
@@ -67,6 +74,18 @@
 
 <p align="center">
   <img src="docs/dhcp-pool-demo.gif" alt="Starting the DHCP pool, cameras getting addresses, and reserving a fixed IP for one camera" width="820">
+</p>
+
+### Monitor a whole site
+
+<p align="center">
+  <img src="docs/monitor.png" alt="Monitor page: five devices pinged every second, one camera down with an alert" width="820">
+</p>
+
+### Troubleshooting tools
+
+<p align="center">
+  <img src="docs/tools.png" alt="Tools page: port check results and an RTSP stream check" width="820">
 </p>
 
 ## Quick start
@@ -169,6 +188,7 @@ preview-build\Cre8Labs-NetTools.exe --demo
 | `src/*.xaml` | Windows, styles and the Cre8Labs theme (`App.xaml`) |
 | `installer/` | Inno Setup script and wizard artwork |
 | `.github/workflows/` | CI build on every push, and releases when a `v*` tag is pushed |
+| `video/` | The explainer video: a capture script that drives the demo app, and a [Remotion](https://www.remotion.dev) project that edits it with narration |
 
 ### Releasing
 
